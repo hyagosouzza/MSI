@@ -1,0 +1,146 @@
+h1,h2,h3,h4 v {
+    color: #0F1A20;
+    font-family: 'Play';
+}
+
+b des {
+    color: #0F1A20;
+    font-family: 'Play';
+    font-size: 15pt;
+}
+
+a aa {
+    color: #0F1A20;
+    font-family: 'Play';
+    font-size: 12pt;
+}
+
+aa:hover{
+    border-bottom: solid 1px;
+}
+
+a ab {
+    color: #0F1A20;
+    font-family: 'Play';
+        font-size: 15pt;
+}
+
+body {
+    padding-left: 0px;
+}
+
+.page-header {
+    background-color: #800000;
+    margin: 0px 0px 0px 0px;
+    padding: 1px 10px 5px 50px;
+}
+
+.page-header h1, .page-header h1 v, .page-header h1 a:visited, .page-header h1 a:active {
+    color: #FFFFFF;
+    font-size: 25pt;
+    text-decoration: none;
+    font-family: 'Poiret One', cursive;
+}
+
+.content {
+    margin-left: 40px;
+}
+
+.date {
+    color: #828282;
+}
+
+.save {
+    float: right;
+}
+
+.post-form textarea, .post-form input {
+    width: 100%;
+}
+
+.top-menu, .top-menu:hover, .top-menu:visited {
+    color: #ffffff;
+    float: right;
+    font-size: 20pt;
+    margin-right: 10px;
+}
+
+.post {
+    margin-bottom: 40px;
+    padding-left: 25px;
+}
+
+#cor-order {
+    color: #cccccc;
+}
+
+#div-busca {
+    background-color: #ffffff;
+    border: solid 2px #800000;
+    border-radius: 10px;
+    width: 300px;
+    height: 32px;
+}
+
+#txt-busca {
+    float:left;
+    background-color: transparent;
+    padding-left:5px;
+    font-size: 15px;
+    border: none;
+    height: 32px;
+    width: 191px;
+}
+
+#but-busca {
+    border: none;
+    float: right;
+    height: 30px;
+    border-radius: 0 7px 7px 0;
+    width: 70px;
+    font-weight: bold;
+    background: #800000;
+}
+
+#div-busca img{
+    float: left;
+}
+
+.post h1 a, .post h1 a:visited {
+    color: #1982C4;
+}
+
+#container {
+  display: inline-block;
+  position: relative;
+}
+
+#butn {
+    border: none;
+    background: #800000;
+    font-size: 10pt;
+}
+
+#container figcaption {
+position: absolute;
+  bottom: 0px;
+  font-family: 'Play';
+  font-size: 9pt;
+  color: white;
+}
+
+#band {
+  top: 0px;
+  right: 0px;
+}
+
+#rele {
+    border-bottom: solid 1px;
+    color: #0F1A20;
+    font-family: 'Play';
+    font-size: 15pt;
+}
+
+.img {
+    align: 'left';
+}

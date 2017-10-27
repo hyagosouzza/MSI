@@ -1,0 +1,67 @@
+{% load staticfiles %}
+<html>
+<head>
+    <title>MarkSeverIano</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="{% static 'css/msi.css' %}">
+    <link href="https://fonts.googleapis.com/css?family=Acme|Cuprum|Exo|Kanit|Play|Poiret+One" rel="stylesheet">
+</head>
+<body>
+<div class="page-header">
+    <h1><b>MarkSeverIano</b>
+        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+        &emsp;&emsp;&emsp;&emsp;
+        <aa align='right' style="font-family: 'Play'; font-size: 10pt">Sign In</aa>
+        <aa align='right' style="font-family: 'Play'; font-size: 10pt">Sign Up</aa></h1>
+</div>
+
+<div class="produtos-section">
+    <img style="width:1349px; height:300px;"
+         src="http://files-febre.s3.us-east-2.amazonaws.com/s3fs-public/banco_imagens/imagens2/Cinemark_Sala%20Comum%2002_0.JPG?download=1" />
+</div>
+<br />
+<div id="div-busca" style="margin-left:30px; width: 604px;">
+    <img style= "width:30px; height:30px;"
+         src="https://icon-icons.com/icons2/37/PNG/512/Search_find_3519.png"
+         alt="Find Filmes..."/>
+    <input type="text" id="txt-busca" placeholder="Find Films..."/>
+    <button id="but-busca" style="color: #ffffff;">Search</button>
+</div>
+</br>
+<nav class="navbar navbar-default" >
+    <div class="container-fluid" style=" background-color: #f2f2f2" >
+        <div class="navbar-header">
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
+                <a class="navbar-brand"><ab><b>Order by:</b></ab></a>
+                <ul class="nav navbar-nav" >
+                    <p align='center'>
+                    <li><a href="http://localhost:8000/title"><aa>Title</aa></a></li>
+                    <li id="navbar-brand"><a><aa>Category</aa></a></li>
+                    </li>
+                    </p>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div>
+    </div>
+</nav>
+</br>
+
+<div class="container">
+    <p id="rele">Films sorted by:  <b>Releases</b></p>
+</div>
+
+{% for categ in index_cat %}
+</br>
+<div class="container">
+    <p id="rele"><b>{{ categ.name }}:</b></p>
+
+    <div class="container">
+        {{ categ.filme }}
+    </div>
+</div>
+{% endfor %}
+</br>
+</body>
+</html>
