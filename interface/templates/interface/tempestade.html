@@ -1,18 +1,18 @@
-{% load staticfiles %}
+{% load static %}
 <html>
 <head>
     <title>MarkSeverIano</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-    <link rel="stylesheet" href="{% static 'css/msi.css' %}">
+    <link rel="stylesheet" href="{% static 'interface/css/interface.css' %}">
     <link href="https://fonts.googleapis.com/css?family=Acme|Cuprum|Exo|Kanit|Play|Poiret+One" rel="stylesheet">
 </head>
 <body>
 <div class="page-header">
     <h1><b style="font-size: 25pt;">MarkSeverIano</b>
         &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
         <aa align='right' style="font-family: 'Play'; font-size: 10pt">Sign In</aa>
         <aa align='right' style="font-family: 'Play'; font-size: 10pt">Sign Up</aa></h1>
 </div>
@@ -50,26 +50,30 @@
 </br>
 
 <div class="container">
-    <p id="rele">Films sorted by:  <b>Title</b></p>
-</div>
-</br>
-<div class="container">
-
-    {% for film in index %}
     <figure id="container">
-        <img style="width:200px; height:350px; border-radius: 5px;" src="{{film.url_img}}" />
+        <img style="width:200px; height:350px; border-radius: 5px;" src="{{tempestade.url_img}}" />
         <figcaption>
             <div>
                 <button id ="butn" type="button" style=
-                        "width:200px; height:50px; border-radius: 5px;">{{film.name}}</button>
+                        "width:200px; height:50px; border-radius: 5px;">
+                    <a style="color: #ffffff;">{{tempestade.name}}</a></button>
             </div>
         </figcaption>
         <figcaption id="band">
-            <img style="width:50px; height:50px;" src="{{film.faixa}}" />
+            <img style="width:50px; height:50px;" src="{{tempestade.faixa}}" />
         </figcaption>
     </figure>
-    &emsp;
-    {% endfor %}
+    &emsp;&emsp;&emsp;&emsp;&emsp;
+    <iframe width="754" height="380" src="https://www.youtube.com/embed/lNAC9wVUaqY" frameborder="0" allowfullscreen></iframe>
+
+    </br>
+    </br>
+    <p ><des><b>Category:</b></des></p>
+    <p><des><b>Description:</b> {{tempestade.description}}</des></p>
+    <p><des><b>Time:</b> {{tempestade.time}}</des></p>
+    <p><des><b>Director:</b> {{tempestade.director}}</des></p>
+    <p><des><b>Cast:</b> {{tempestade.elenco}}</des></p>
 </div>
+
 </body>
 </html>

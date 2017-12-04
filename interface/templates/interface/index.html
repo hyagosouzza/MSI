@@ -1,0 +1,50 @@
+{% extends 'interface/base.html' %}
+<br/>
+<nav class="navbar navbar-default">
+    <div class="container-fluid" style=" background-color: #f2f2f2">
+        <div class="navbar-header">
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
+                <a class="navbar-brand">
+                    <b>Order by:</b>
+                </a>
+                <ul class="nav navbar-nav">
+                    <li><a href="http://localhost:8000/">
+                        Releases
+                    </a></li>
+                    <li><a href="http://localhost:8000/title">
+                        Title
+                    </a></li>
+                    <li id="navbar-brand"><a>
+                        Category
+                    </a></li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div>
+    </div>
+</nav>
+<br/>
+
+<div class="container">
+    <p id="rele">Films sorted by: <b>Releases</b></p>
+</div>
+<br/>
+<div class="container">
+
+    {% for film in index %}
+        <figure id="container">
+            <img style="width:200px; height:350px; border-radius: 5px;" src="{{ film.url_img }}"/>
+            <figcaption>
+                <div>
+                    <button id="butn" type="button" style=
+                            "width:200px; height:50px; border-radius: 5px;">
+                        <a href="http://localhost:8000/{{ film.link }}" style="color: #ffffff;">{{ film.name }}</a>
+                    </button>
+                </div>
+            </figcaption>
+            <figcaption id="band">
+                <img style="width:50px; height:50px;" src="{{ film.faixa }}"/>
+            </figcaption>
+        </figure>
+        &emsp;
+    {% endfor %}
+</div>

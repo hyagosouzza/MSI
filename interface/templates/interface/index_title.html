@@ -5,14 +5,14 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-    <link rel="stylesheet" href="{% static 'css/msi.css' %}">
+    <link rel="stylesheet" href="{% static 'css/interface.css' %}">
     <link href="https://fonts.googleapis.com/css?family=Acme|Cuprum|Exo|Kanit|Play|Poiret+One" rel="stylesheet">
 </head>
 <body>
 <div class="page-header">
     <h1><b style="font-size: 25pt;">MarkSeverIano</b>
         &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
         <aa align='right' style="font-family: 'Play'; font-size: 10pt">Sign In</aa>
         <aa align='right' style="font-family: 'Play'; font-size: 10pt">Sign Up</aa></h1>
 </div>
@@ -50,7 +50,7 @@
 </br>
 
 <div class="container">
-    <p id="rele">Films sorted by:  <b>Releases</b></p>
+    <p id="rele">Films sorted by:  <b>Title</b></p>
 </div>
 </br>
 <div class="container">
@@ -61,8 +61,7 @@
         <figcaption>
             <div>
                 <button id ="butn" type="button" style=
-                        "width:200px; height:50px; border-radius: 5px;">
-                    <a href="http://localhost:8000/{{film.link}}" style="color: #ffffff;">{{film.name}}</a></button>
+                        "width:200px; height:50px; border-radius: 5px;">{{film.name}}</button>
             </div>
         </figcaption>
         <figcaption id="band">
