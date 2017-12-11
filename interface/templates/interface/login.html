@@ -1,0 +1,50 @@
+{% extends 'interface/base.html' %}
+{% load cidade %}
+{% block corpo %}
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-6">
+                <div class="card border-light mb-3">
+                    <div class="card-header">Login</div>
+                    <div class="card-body text-dark">
+                        <h4 class="card-title">Informe seus dados para login</h4>
+                        <br/>
+                        <form method="post">
+                            {% csrf_token %}
+                            <fieldset>
+                                {% if erro %}
+                                    <div class="alert alert-danger">
+                                        {{ msg }}
+                                    </div>
+                                {% endif %}
+                                {% for f in form %}
+                                    <div class="form-group row">
+                                        <label for="staticEmail" class="col-sm-2 col-form-label">{{ f.label }}</label>
+                                        <div class="col-sm-10">
+                                            {{ f }}
+                                        </div>
+                                    </div>
+                                {% endfor %}
+                                <br/>
+                                <button type="submit" class="btn btn-dark btn-block btn-lg"
+                                        href="/reservar/{{ s.id }}/">
+                                    <i class="fa fa-key"></i> Entrar
+                                </button>
+                                <hr/>
+                                <a href="/cadastrar/" class="btn btn-block btn-lg btn-secondary">
+                                    <i class="fa fa-user-plus"></i> Cadastrar
+                                </a>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3"></div>
+        </div>
+    </div>
+{% endblock %}

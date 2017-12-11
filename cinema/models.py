@@ -1,7 +1,8 @@
+from dateutil.relativedelta import relativedelta
 from django.db import models
 from django.utils import timezone
 
-from cinema.choices import TIPOS_FILMES, CLASSIFICACAO
+from cinema.choices import TIPOS_FILMES, CLASSIFICACAO, STATUS_RESERVA
 
 
 class Cinema(models.Model):
@@ -19,6 +20,17 @@ class Cinema(models.Model):
     def __str__(self):
         return self.nome
 
+    def get_sessoes(self):
+        ultima_data = timezone.now() + relativedelta(hours=1)
+        return Sessao.objects.filter(cinema=self,
+                                     data_horario__gte=ultima_data).order_by('data_horario')
+
+    @staticmethod
+    def get_cidades_disponiveis():
+        from geo.models import Cidade
+        cidades_id = [v.get("cidade_id") for v in Cinema.objects.values('cidade_id').distinct()]
+        return Cidade.objects.filter(id__in=cidades_id).order_by("nome")
+
 
 class Filme(models.Model):
     class Meta:
@@ -34,8 +46,16 @@ class Filme(models.Model):
     data_cadastro = models.DateTimeField(verbose_name=u"Data de cadastro", auto_now_add=True)
     data_alteracao = models.DateTimeField(verbose_name=u"Data de cadastro", auto_now=True)
 
+    def get_sessoes(self, cidade):
+        ultima_data = timezone.now() + relativedelta(hours=1)
+        return Sessao.objects.filter(cinema__cidade=cidade,
+                                     data_horario__gte=ultima_data).order_by('data_horario')
+
     def __str__(self):
         return self.nome
+
+    def get_imagem(self):
+        return self.imagem.url
 
 
 class Categoria(models.Model):
@@ -77,6 +97,7 @@ class Reserva(models.Model):
     sessao = models.ForeignKey("Sessao", verbose_name=u"Sessão")
     usuario = models.ForeignKey("usuario.Usuario", verbose_name=u"Sessão")
     quantidade = models.PositiveIntegerField(verbose_name=u"Quantidade de reservas")
+    status = models.PositiveIntegerField(verbose_name=u"Status", choices=STATUS_RESERVA, default=0)
     data_cadastro = models.DateTimeField(verbose_name=u"Data de cadastro", auto_now_add=True)
     data_alteracao = models.DateTimeField(verbose_name=u"Data de cadastro", auto_now=True)
 

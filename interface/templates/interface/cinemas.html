@@ -1,0 +1,49 @@
+{% extends 'interface/base.html' %}
+{% load static %}
+{% load cidade %}
+{% block corpo %}
+    <div class="container-fluid">
+        <br/>
+        <h2>Cinemas disponíveis em sua cidade:</h2>
+        <br/>
+        <div class="row">
+            {% for cinema in cinemas %}
+                <div class="card mb-3" style="width: 100%">
+                    <div class="card-header bg-dark text-white">
+                        {{ cinema.nome }}
+                    </div>
+                    <div class="card-body border-light text-dark">
+                        <div class="row">
+                            {% for s in cinema.get_sessoes %}
+                                <div class="col-md-3">
+                                    <div class="card border-light mb-3">
+                                        <div class="card-header">{{ s.filme.nome }}</div>
+                                        <img style="height: 200px; width: 100%; display: block;"
+                                             src="{{ s.filme.get_imagem }}"
+                                             alt="Card image">
+                                        <div class="card-body text-dark">
+                                            <p class="card-text">
+                                                Data/Horário: {{ s.data_horario }} <br/>
+                                                Categoria: {{ s.filme.categoria }} <br/>
+                                                Ingresso: R$ {{ s.preco }} <br/>
+                                                Info: {{ s.filme.descricao }}<br/>
+                                                Duração: {{ s.filme.duracao }}
+                                            </p>
+                                            <a class="btn btn-dark btn-block" href="/reservar/{{ s.id }}/">
+                                                <i class="fa fa-ticket-alt"></i> Reservar ingresso!
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            {% empty %}
+                                <h2>Nenhuma sessão disponível para este cinema.</h2>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+                <br/>
+                <br/>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

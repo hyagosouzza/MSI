@@ -1,0 +1,78 @@
+{% extends 'interface/base.html' %}
+{% load static %}
+{% load cidade %}
+{% block corpo %}
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-6">
+                <div class="card border-light mb-3">
+                    <div class="card-header">Reserva de Ingressos</div>
+                    <div class="card-body text-dark">
+                        <div class="card-title">{{ sessao.filme.nome }}</div>
+                        <img style="height: 200px; width: 100%; display: block;"
+                             src="{{ sessao.filme.get_imagem }}"
+                             alt="Card image">
+                        <h4 class="card-title">{{ sessao.cinema.nome }}</h4>
+                        <p class="card-text">
+                            Data/Horário: {{ sessao.data_horario }} <br/>
+                            Categoria: {{ sessao.filme.categoria }} <br/>
+                            Info: {{ sessao.filme.descricao }}<br/>
+                            Ingresso: R$ {{ sessao.preco }} <br/>
+                            Duração: {{ sessao.filme.duracao }}
+                        </p>
+                        {% if reserva_realizada %}
+                            <div class="alert alert-success">
+                                Reserva de {{ reserva.quantidade }} ingressos for realizada com sucesso!
+                            </div>
+                        {% else %}
+                            {% if disponivel %}
+                                <h4 class="card-title">Informe a quantidade que deseja reservar</h4>
+                                <br/>
+                                {% if reservas_realizadas > 0 %}
+                                    <div class="alert alert-warning">
+                                        Você já possui {{ reservas_realizadas }} ingresso(s) resevado(s) para esta sessão!
+                                        <a href="/reservas/">Deseja
+                                            visualizar suas reservas?</a>
+                                    </div>
+                                {% endif %}
+                                <form method="post">
+                                    {% csrf_token %}
+                                    <fieldset>
+                                        {% for f in form %}
+                                            <div class="form-group row">
+                                                <label for="staticEmail"
+                                                       class="col-sm-4 col-form-label">{{ f.label }}</label>
+                                                <div class="col-sm-8">
+                                                    {{ f }}
+                                                    {% if f.errors %}
+                                                        <p class="text-danger">
+                                                            {{ f.errors|striptags }}
+                                                        </p>
+                                                    {% endif %}
+                                                </div>
+                                            </div>
+                                        {% endfor %}
+                                        <br/>
+                                        <button type="submit" class="btn btn-dark btn-block btn-lg">
+                                            <i class="fa fa-ticket-alt"></i> Reservar
+                                        </button>
+                                    </fieldset>
+                                </form>
+                            {% else %}
+                                <div class="alert alert-danger">
+                                    Sessão indisponível para reserva
+                                </div>
+                            {% endif %}
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3"></div>
+        </div>
+    </div>
+{% endblock %}

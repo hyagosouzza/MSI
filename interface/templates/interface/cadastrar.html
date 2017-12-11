@@ -1,0 +1,45 @@
+{% extends 'interface/base.html' %}
+{% load cidade %}
+{% block corpo %}
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-6">
+                <div class="card border-light mb-3">
+                    <div class="card-header">Cadastro</div>
+                    <div class="card-body text-dark">
+                        <h4 class="card-title">Informe seus dados para cadastro</h4>
+                        <br/>
+                        <form method="post">
+                            {% csrf_token %}
+                            <fieldset>
+                                {% for f in form %}
+                                    <div class="form-group row">
+                                        <label for="staticEmail" class="col-sm-4 col-form-label">{{ f.label }}</label>
+                                        <div class="col-sm-8">
+                                            {{ f }}
+                                            {% if f.errors %}
+                                                <p class="text-danger">
+                                                    {{ f.errors|striptags }}
+                                                </p>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                {% endfor %}
+                                <br/>
+                                <button type="submit" class="btn btn-dark btn-block btn-lg">
+                                    <i class="fa fa-user-plus"></i> Cadatrar
+                                </button>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3"></div>
+        </div>
+    </div>
+{% endblock %}

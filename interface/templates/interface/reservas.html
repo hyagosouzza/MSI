@@ -1,0 +1,55 @@
+{% extends 'interface/base.html' %}
+{% load static %}
+{% load cidade %}
+{% block corpo %}
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <h2>Reservas Realizadas</h2>
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead>
+                        <tr>
+                            <th scope="col">Reserva</th>
+                            <th scope="col">Cinema</th>
+                            <th scope="col">Filme</th>
+                            <th scope="col">Data Sessao</th>
+                            <th scope="col">Ingressos</th>
+                            <th scope="col">Status</th>
+                            <th scope="col">Cancelar</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for r in reservas %}
+                            <tr>
+                                <th>{{ r.id }}</th>
+                                <td>{{ r.sessao.cinema.nome }}</td>
+                                <td>{{ r.sessao.filme.nome }}</td>
+                                <td>{{ r.sessao.data_horario }}</td>
+                                <td>{{ r.quantidade }}</td>
+                                <td>{{ r.get_status_display }}</td>
+                                <td>
+                                    {% if r.status == 0 %}
+                                        <button class="btn btn-danger"
+                                                onclick="(function() {
+                                                        if(confirm('Deseja realmente cancelar essa reserva?')){
+                                                        location.href = '?cancelar={{ r.id|safe }}';
+                                                        }
+                                                        })()">
+                                            <i class="fa fa-times"></i> Cancelar Reserva
+                                        </button>
+                                    {% endif %}
+                                </td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -3,6 +3,11 @@ TIPOS_FILMES = (
     (1, "Dublado"),
     (2, "Nacional"),
 )
+STATUS_RESERVA = (
+    (0, "Aguardando Retirada"),
+    (1, "Confirmado"),
+    (2, "Cancelado"),
+)
 
 CLASSIFICACAO = (
     (0, "Live"),
