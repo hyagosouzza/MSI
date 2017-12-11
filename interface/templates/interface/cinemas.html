@@ -27,7 +27,9 @@
                                                 Categoria: {{ s.filme.categoria }} <br/>
                                                 Ingresso: R$ {{ s.preco }} <br/>
                                                 Info: {{ s.filme.descricao }}<br/>
-                                                Duração: {{ s.filme.duracao }}
+                                                Duração: {{ s.filme.duracao }}<br/>
+                                                <span class="badge badge-primary">{{ s.get_tipo_display }}</span>
+                                                <span class="badge badge-secondary">{{ s.filme.get_classificacao_display }}</span>
                                             </p>
                                             <a class="btn btn-dark btn-block" href="/reservar/{{ s.id }}/">
                                                 <i class="fa fa-ticket-alt"></i> Reservar ingresso!

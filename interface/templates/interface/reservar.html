@@ -23,7 +23,9 @@
                             Categoria: {{ sessao.filme.categoria }} <br/>
                             Info: {{ sessao.filme.descricao }}<br/>
                             Ingresso: R$ {{ sessao.preco }} <br/>
-                            Duração: {{ sessao.filme.duracao }}
+                            Duração: {{ sessao.filme.duracao }}<br/>
+                            <span class="badge badge-primary">{{ sessao.get_tipo_display }}</span>
+                            <span class="badge badge-secondary">{{ sessao.filme.get_classificacao_display }}</span>
                         </p>
                         {% if reserva_realizada %}
                             <div class="alert alert-success">

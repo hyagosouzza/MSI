@@ -1,0 +1,27 @@
+{% extends "admin/base.html" %}
+{% load i18n %}
+
+
+{% block title %}{{ title }} | MarkSeverIano - Administrativo{% endblock %}
+
+{% block branding %}
+<h1 id="site-name"><a href="{% url 'admin:index' %}">MarkSeverIano - Administrativo</a></h1>
+{% endblock %}
+
+{% block nav-global %}{% endblock %}
+
+
+{% block javascripts %} {{ block.super }}
+    <script type="text/javascript"
+            charset="utf-8">
+        var STATIC_URL = '{{ STATIC_URL }}', MEDIA_URL = '{{ MEDIA_URL }}', REQUEST_USER = '{{ request.user.pk }}', IS_SUPERUSER = '{{ request.user.is_superuser }}';
+    </script>
+{% endblock %}
+
+{% block footer %}
+    {% if not is_popup %}
+        <div>
+            <p align="center">Copyright &copy; 2017 &ndash; {%  now "Y" %} MarkSeverIano. Todos os Direitos Reservados.</p>
+        </div>
+    {% endif %}
+{% endblock %}
