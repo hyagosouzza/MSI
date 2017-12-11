@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="57314f47-38d7-42f2-805c-c0aaa3e94aaf" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/uwsgi/uwsgi.ini" afterPath="$PROJECT_DIR$/uwsgi/uwsgi.ini" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/markseveriano/settings.py" afterPath="$PROJECT_DIR$/markseveriano/settings.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -73,11 +73,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="uwsgi.ini" pinned="false" current-in-tab="true">
+      <file leaf-file-name="uwsgi.ini" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/uwsgi/uwsgi.ini">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="15">
               <caret line="1" column="10" lean-forward="false" selection-start-line="1" selection-start-column="10" selection-end-line="1" selection-end-column="10" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="settings.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/markseveriano/settings.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="405">
+              <caret line="27" column="6" lean-forward="false" selection-start-line="27" selection-start-column="6" selection-end-line="27" selection-end-column="6" />
               <folding />
             </state>
           </provider>
@@ -88,16 +98,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="309">
               <caret line="27" column="115" lean-forward="false" selection-start-line="25" selection-start-column="63" selection-end-line="27" selection-end-column="115" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="cidade.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/interface/templatetags/cidade.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="16" column="51" lean-forward="false" selection-start-line="16" selection-start-column="44" selection-end-line="16" selection-end-column="51" />
               <folding />
             </state>
           </provider>
@@ -171,6 +171,7 @@
         <option value="$PROJECT_DIR$/interface/templates/interface/index.html" />
         <option value="$PROJECT_DIR$/templates/admin/base_site.html" />
         <option value="$PROJECT_DIR$/uwsgi/uwsgi.ini" />
+        <option value="$PROJECT_DIR$/markseveriano/settings.py" />
       </list>
     </option>
   </component>
@@ -280,7 +281,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="SearchEverywhereHistoryKey" value="base&#9;FILE&#9;file:///Users/higor/Projetos/Faculdade/MSI/interface/templates/interface/base.html&#10;url&#9;FILE&#9;file:///Users/higor/Projetos/Faculdade/MSI/interface/urls.py&#10;Cinema&#9;null&#9;null" />
+    <property name="SearchEverywhereHistoryKey" value="sett&#9;null&#9;null&#10;base&#9;FILE&#9;file:///Users/higor/Projetos/Faculdade/MSI/interface/templates/interface/base.html&#10;url&#9;FILE&#9;file:///Users/higor/Projetos/Faculdade/MSI/interface/urls.py&#10;Cinema&#9;null&#9;null" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -374,7 +375,14 @@
       <option name="project" value="LOCAL" />
       <updated>1513032050552</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Add Legenda e Classificação">
+      <created>1513032132202</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1513032132202</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -720,6 +728,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
           <caret line="1" column="10" lean-forward="false" selection-start-line="1" selection-start-column="10" selection-end-line="1" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/markseveriano/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="27" column="6" lean-forward="false" selection-start-line="27" selection-start-column="6" selection-end-line="27" selection-end-column="6" />
           <folding />
         </state>
       </provider>
